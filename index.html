@@ -250,9 +250,43 @@
     <script>
       function handleSubmit(event) {
         event.preventDefault();
-        alert("Thank you for your interest! We will contact you shortly.");
-        // In a real implementation, you would send this data to a server
-        event.target.reset();
+
+        const form = event.target;
+        const data = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          message: form.message.value,
+        };
+
+        // Google Apps Script URL
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbzjNLnWDn_W9BtF7QweryiZby629LWgVDeJp7Dn68SpgAdz6A2j4r35A7eQ0SzKG9hh/exec";
+
+        // Show loading message
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
+        // Send data to Google Sheets
+        fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            alert("Thank you for your interest! We will contact you shortly.");
+            form.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Thank you for your interest! We will contact you shortly.");
+            form.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          });
       }
     </script>
   </body>
