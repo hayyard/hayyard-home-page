@@ -22,14 +22,15 @@
           </a>
         </div>
         <div class="nav-contact">
-          <a href="tel:+16693650886">(669) 365-0886</a>
-          <a href="mailto:hayyard.llc@gmail.com">hayyard.llc@gmail.com</a>
+          <a class="nav-call-button" href="tel:+16693650886"
+            >📞 Call Now</a
+          >
+          <a class="nav-text-button" href="sms:+16693650886">💬 Text Us</a>
         </div>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -37,10 +38,14 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <h1>HayYard LLC</h1>
-      <p>Professional Lawn Care & Handyman Services in San Jose, CA</p>
+      <h1>Professional Lawn Care &amp; Yard Cleanup</h1>
+      <p class="hero-subtitle">Serving San Jose &amp; the South Bay Area</p>
       <p class="hero-subtitle">
-        Serving San Jose and surrounding areas within a 20-mile radius
+        ✓ Free Estimates<br />
+        ✓ Reliable &amp; Affordable<br />
+        ✓ Eco-Friendly Equipment<br />
+        ✓ Licensed & Insured
+
       </p>
       <a href="#contact" class="cta-button">Get a Free Quote</a>
     </section>
@@ -48,22 +53,32 @@
     <!-- About Section -->
     <section class="about" id="about">
       <div class="container">
-        <h2>About Us</h2>
+        <h2>Our Work Results</h2>
         <div class="about-content">
-          <div class="about-text">
-            <h3>Your Trusted Yard Partner in San Jose</h3>
-            <ul style="list-style: none; padding-left: 0; line-height: 2">
-              <li><strong>✓ Professional & Affordable Services</strong></li>
-              <li><strong>✓ Eco-Friendly Greenworks Equipment</strong></li>
-              <li><strong>✓ Residential Specialists</strong></li>
-              <li><strong>✓ Reliable & Detail-Oriented</strong></li>
-            </ul>
+          <div class="about-pair-heading">
+            <h3>Overgrown Yard Cleanup</h3>
+            <p>San Jose, CA</p>
+            <!-- <p class="about-pair-labels">Before &nbsp;&nbsp; After</p> -->
           </div>
-          <div class="about-image">
-            <img
-              src="img/lawndingWithTools.png"
-              alt="Lawn care equipment and tools"
-            />
+          <div class="about-image-card">
+            <h3>BEFORE</h3>
+            <img src="img/before2.png" alt="Before lawn and yard cleanup work" />
+          </div>
+          <div class="about-image-card">
+            <h3>AFTER</h3>
+            <img src="img/after2.png" alt="After lawn and yard cleanup work" />
+          </div>
+          <div class="about-pair-heading">
+            <h3>Lawn Cleanup</h3>
+            <p>Santa Clara, CA</p>
+          </div>
+          <div class="about-image-card">
+            <h3>BEFORE</h3>
+            <img src="img/before1.png" alt="Before yard cleanup and lawn care work" />
+          </div>
+          <div class="about-image-card">
+            <h3>AFTER</h3>
+            <img src="img/after1.png" alt="After yard cleanup and lawn care work" />
           </div>
         </div>
       </div>
@@ -75,28 +90,31 @@
         <h2>Our Services</h2>
         <div class="services-grid">
           <div class="service-card">
+            <div class="service-icon">🟩</div>
+            <h3>Sod Installation</h3>
+            <p>
+              Install fresh sod to quickly create a healthy, even, and beautiful lawn.
+            </p>
+          </div>
+          <div class="service-card">
             <div class="service-icon">✂️</div>
             <h3>Lawn Mowing & Edging</h3>
             <p>
-              Professional grass cutting, edging, and cleanup using modern
-              Greenworks 80V equipment. Keep your lawn healthy, neat, and
-              well-maintained with regular service.
+              Keep your lawn neat and healthy with professional mowing and edging.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">🧹</div>
             <h3>Yard Cleanup</h3>
             <p>
-              Comprehensive yard cleanup including debris removal, leaf blowing,
-              and general yard tidying to keep your outdoor spaces pristine.
+              Remove leaves, debris, and overgrown vegetation for a cleaner yard.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">🌿</div>
             <h3>Hedge Trimming</h3>
             <p>
-              Professional hedge and shrub trimming to enhance your property's
-              curb appeal and maintain healthy vegetation.
+              Shape and maintain shrubs to improve curb appeal.
             </p>
           </div>
           <!-- HIDDEN: Regular Maintenance
@@ -119,52 +137,60 @@
             </p>
           </div>
           -->
-          <div class="service-card">
-            <div class="service-icon">💚</div>
-            <h3>Eco-Friendly Solutions</h3>
-            <p>
-              Battery-powered equipment means quiet, zero-emission service for
-              your home and the environment.
-            </p>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects/Gallery Section -->
-    <section class="projects" id="projects">
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="why-choose">
       <div class="container">
-        <h2>Equipment & Resources</h2>
-        <div class="gallery">
-          <div class="project-item">
-            <span class="project-label"
-              >Greenworks 80V PRO 21" Self-Propelled Mower</span
-            >
+        <h2>Why Choose HayYard?</h2>
+        <ul class="why-choose-list">
+          <li>✓ Free Estimates</li>
+          <li>✓ Reliable Communication</li>
+          <li>✓ Eco-Friendly Equipment</li>
+          <li>✓ Quality Workmanship</li>
+          <li>✓ Residential Specialists</li>
+          <li>✓ Family-Owned Business</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <h2>Customer Reviews</h2>
+        <p class="reviews-stars">⭐⭐⭐⭐⭐</p>
+        <h3 class="reviews-coming-soon">Coming Soon</h3>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <h2>FAQ ⭐⭐⭐⭐</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Do you offer free estimates?</h3>
+            <p>Yes.</p>
           </div>
-          <div class="project-item">
-            <span class="project-label"
-              >Greenworks 80V PRO 17" String Trimmer</span
-            >
+          <div class="faq-item">
+            <h3>What areas do you serve?</h3>
+            <p>San Jose, Cupertino, Saratoga, Los Gatos and surrounding areas.</p>
           </div>
-          <div class="project-item">
-            <span class="project-label">Greenworks 80V PRO 730 CFM Blower</span>
+          <div class="faq-item">
+            <h3>Do you offer recurring lawn maintenance?</h3>
+            <p>Yes.</p>
           </div>
-          <!-- HIDDEN: Multiple 80V Batteries
-          <div class="project-item">
-            <span class="project-label"
-              >Multiple 80V Batteries (4Ah, 3Ah, 2Ah)</span
-            >
+          <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>Cash, Zelle, & Venmo</p>
           </div>
-          -->
-          <!-- HIDDEN: Dual Chargers
-          <div class="project-item">
-            <span class="project-label"
-              >Dual Chargers for Quick Turnaround</span
-            >
-          </div>
-          -->
-          <div class="project-item">
-            <span class="project-label">Reliable Service Vehicle</span>
+          <div class="faq-item">
+            <h3>How quickly do you respond?</h3>
+            <p>Usually within 24 hours.</p>
           </div>
         </div>
       </div>
@@ -173,36 +199,21 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2>Get in Touch</h2>
-        <div class="contact-content">
-          <div class="contact-item">
-            <h3>📞 Phone</h3>
-            <p>
-              <strong><a href="tel:+16693650886">(669) 365-0886</a></strong>
-            </p>
-          </div>
-          <div class="contact-item">
-            <h3>📧 Email</h3>
-            <p>
-              <strong
-                ><a href="mailto:hayyard.llc@gmail.com"
-                  >hayyard.llc@gmail.com</a
-                ></strong
-              >
-            </p>
-          </div>
-          <div class="contact-item">
-            <h3>📍 Office Location</h3>
-            <p>
-              <strong>2150 N First St Ofc 448<br />San Jose, CA 95131</strong>
-            </p>
-          </div>
-        </div>
-
+        <h2>Ready to Transform Your Yard?</h2>
+        <p class="contact-lead">Call or Text:</p>
+        <h3 class="contact-phone-heading">
+          📞 <a href="tel:+16693650886">(669) 365-0886</a>
+        </h3>
         <div class="contact-form">
-          <h3 style="text-align: center; margin-bottom: 2rem">
+          <h2 style="text-align: center; margin-bottom: 0.5rem">
+            Ready for a Cleaner Yard?
+          </h2>
+          <h3 style="text-align: center; margin-bottom: 0.5rem">
             Request a Free Quote
           </h3>
+          <p style="text-align: center; margin-bottom: 2rem">
+            <strong>Free estimates. No obligation.</strong>
+          </p>
           <form onsubmit="handleSubmit(event)">
             <div class="form-group">
               <label for="name">Name</label>
@@ -215,34 +226,71 @@
               />
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="phone">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your phone number"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email (Optional)</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="Your.email@example.com"
-                required
               />
             </div>
             <div class="form-group">
-              <label for="phone">Phone</label>
+              <label for="address">Address (Optional)</label>
               <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Your phone"
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Your service address"
               />
+            </div>
+            <div class="form-group">
+              <label>Services Needed</label>
+              <div class="services-options">
+                <label class="checkbox-option"
+                  ><input type="checkbox" name="services" value="Lawn Mowing" />
+                  Lawn Mowing</label
+                >
+                <label class="checkbox-option"
+                  ><input type="checkbox" name="services" value="Yard Cleanup" />
+                  Yard Cleanup</label
+                >
+                <label class="checkbox-option"
+                  ><input type="checkbox" name="services" value="Hedge Trimming" />
+                  Hedge Trimming</label
+                >
+                <label class="checkbox-option"
+                  ><input type="checkbox" name="services" value="Sod Installation" />
+                  Sod Installation</label
+                >
+                <label class="checkbox-option"
+                  ><input type="checkbox" name="services" value="Other" />
+                  Other</label
+                >
+              </div>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="Describe services you need"
+                placeholder="Tell us about your project."
                 required
               ></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Quote Request</button>
+            <button type="submit" class="submit-btn">[ Get My Free Quote ]</button>
+            <p class="response-note">
+              We typically respond within 24 hours.
+            </p>
           </form>
         </div>
       </div>
@@ -251,9 +299,8 @@
     <!-- Footer -->
     <footer>
       <p>&copy; 2026 HayYard LLC. All rights reserved.</p>
-      <p>Professional Lawn Care & Handyman Services in San Jose, California</p>
-      <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9">
-        Serving San Jose and surrounding areas within a 20-mile radius
+      <p>Professional Lawn Care & Yard Cleanup Services
+Serving San Jose and the South Bay Area
       </p>
     </footer>
 
@@ -262,10 +309,15 @@
         event.preventDefault();
 
         const form = event.target;
+        const selectedServices = Array.from(
+          form.querySelectorAll('input[name="services"]:checked')
+        ).map((item) => item.value);
         const data = {
           name: form.name.value,
           email: form.email.value,
           phone: form.phone.value,
+          address: form.address.value,
+          services: selectedServices.join(", "),
           message: form.message.value,
         };
 
