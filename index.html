@@ -6,6 +6,19 @@
     <title>HayYard LLC - Professional Lawn & Yard Maintenance</title>
     <link rel="icon" type="image/png" href="img/SqureLogo.png" />
     <link rel="stylesheet" href="styles.css?v=20260623-1" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GRYL3KX1Z4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-GRYL3KX1Z4");
+    </script>
   </head>
   <body>
     <!-- Navigation -->
@@ -22,10 +35,12 @@
           </a>
         </div>
         <div class="nav-contact">
-          <a class="nav-call-button" href="tel:+16693650886"
+          <a id="btn-call" class="nav-call-button" href="tel:+16693650886"
             >📞 Call Now</a
           >
-          <a class="nav-text-button" href="sms:+16693650886">💬 Text Us</a>
+          <a id="btn-text" class="nav-text-button" href="sms:+16693650886"
+            >💬 Text Us</a
+          >
         </div>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -304,55 +319,13 @@ Serving San Jose and the South Bay Area
       </p>
     </footer>
 
-    <script>
-      function handleSubmit(event) {
-        event.preventDefault();
+    <div class="lightbox" id="image-lightbox" aria-hidden="true">
+      <button type="button" class="lightbox-close" aria-label="Close image">
+        &times;
+      </button>
+      <img id="lightbox-image" alt="" />
+    </div>
 
-        const form = event.target;
-        const selectedServices = Array.from(
-          form.querySelectorAll('input[name="services"]:checked')
-        ).map((item) => item.value);
-        const data = {
-          name: form.name.value,
-          email: form.email.value,
-          phone: form.phone.value,
-          address: form.address.value,
-          services: selectedServices.join(", "),
-          message: form.message.value,
-        };
-
-        // Google Apps Script URL
-        const scriptURL =
-          "https://script.google.com/macros/s/AKfycbxZ-7hMOxv5Ddm0myTTgGTXgw78d9rfcoTVVqQhwIeGkXETWvRUKShj0smhDp-bjFKh/exec";
-        // Show loading message
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = "Sending...";
-        submitBtn.disabled = true;
-
-        // Send data to Google Sheets
-        fetch(scriptURL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then((response) => {
-            alert("Thank you for your interest! We will contact you shortly.");
-            form.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            alert("Thank you for your interest! We will contact you shortly.");
-            form.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          });
-      }
-    </script>
+    <script src="script.js?v=20260623-1"></script>
   </body>
 </html>
