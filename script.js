@@ -3,7 +3,7 @@ function handleSubmit(event) {
 
   const form = event.target;
   const selectedServices = Array.from(
-    form.querySelectorAll('input[name="services"]:checked')
+    form.querySelectorAll('input[name="services"]:checked'),
   ).map((item) => item.value);
   const data = {
     name: form.name.value,
@@ -49,24 +49,45 @@ function initImageLightbox() {
   const lightbox = document.getElementById("image-lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
   const closeButton = lightbox.querySelector(".lightbox-close");
+  const previousButton = lightbox.querySelector(".lightbox-prev");
+  const nextButton = lightbox.querySelector(".lightbox-next");
+  const imageList = Array.from(images);
+  let currentImageIndex = -1;
+
+  function showImageByIndex(index) {
+    if (!imageList.length) {
+      return;
+    }
+
+    currentImageIndex = (index + imageList.length) % imageList.length;
+    const activeImage = imageList[currentImageIndex];
+    lightboxImage.src = activeImage.src;
+    lightboxImage.alt = activeImage.alt;
+  }
 
   function closeLightbox() {
     lightbox.classList.remove("open");
     lightbox.setAttribute("aria-hidden", "true");
+    currentImageIndex = -1;
     lightboxImage.src = "";
     lightboxImage.alt = "";
   }
 
-  images.forEach((img) => {
+  imageList.forEach((img, index) => {
     img.addEventListener("click", () => {
-      lightboxImage.src = img.src;
-      lightboxImage.alt = img.alt;
+      showImageByIndex(index);
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
     });
   });
 
   closeButton.addEventListener("click", closeLightbox);
+  previousButton?.addEventListener("click", () => {
+    showImageByIndex(currentImageIndex - 1);
+  });
+  nextButton?.addEventListener("click", () => {
+    showImageByIndex(currentImageIndex + 1);
+  });
 
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
@@ -75,8 +96,20 @@ function initImageLightbox() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox.classList.contains("open")) {
+    if (!lightbox.classList.contains("open")) {
+      return;
+    }
+
+    if (event.key === "Escape") {
       closeLightbox();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showImageByIndex(currentImageIndex - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      showImageByIndex(currentImageIndex + 1);
     }
   });
 }
