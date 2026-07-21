@@ -235,6 +235,44 @@ section p {
   cursor: zoom-in;
 }
 
+.about-card-hidden {
+  display: none;
+}
+
+.about-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.about-load-more-btn {
+  background-color: #2c5f2d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.about-load-more-btn:hover {
+  background-color: #234c24;
+}
+
+.about-view-less-btn {
+  background-color: #fff;
+  color: #2c5f2d;
+  border: 1px solid #2c5f2d;
+}
+
+.about-view-less-btn:hover {
+  background-color: #f2f7f2;
+}
+
 /* Services Section */
 .services-grid {
   display: grid;

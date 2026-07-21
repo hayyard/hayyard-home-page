@@ -114,6 +114,52 @@ function initImageLightbox() {
   });
 }
 
+function initAboutLoadMore() {
+  const loadMoreButton = document.getElementById("about-load-more");
+  const viewLessButton = document.getElementById("about-view-less");
+  const cards = Array.from(
+    document.querySelectorAll(".about-content .about-image-card"),
+  );
+  const cardsPerPair = 2;
+  const initialVisiblePairs = 3;
+  const expandPairsPerClick = 3;
+
+  if (!loadMoreButton || !viewLessButton || !cards.length) {
+    return;
+  }
+
+  const totalPairs = Math.ceil(cards.length / cardsPerPair);
+  let visiblePairs = Math.min(initialVisiblePairs, totalPairs);
+
+  function render() {
+    cards.forEach((card, index) => {
+      const pairIndex = Math.floor(index / cardsPerPair);
+      const isVisible = pairIndex < visiblePairs;
+      card.classList.toggle("about-card-hidden", !isVisible);
+    });
+
+    const hasMore = visiblePairs < totalPairs;
+    const isExpanded = visiblePairs > initialVisiblePairs;
+    loadMoreButton.hidden = !hasMore;
+    loadMoreButton.setAttribute("aria-hidden", String(!hasMore));
+    viewLessButton.hidden = !isExpanded;
+    viewLessButton.setAttribute("aria-hidden", String(!isExpanded));
+  }
+
+  loadMoreButton.addEventListener("click", () => {
+    visiblePairs = Math.min(visiblePairs + expandPairsPerClick, totalPairs);
+    render();
+  });
+
+  viewLessButton.addEventListener("click", () => {
+    visiblePairs = Math.min(initialVisiblePairs, totalPairs);
+    render();
+    loadMoreButton.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  render();
+}
+
 function initAnalyticsTracking() {
   const callButton = document.getElementById("btn-call");
   const textButton = document.getElementById("btn-text");
@@ -131,5 +177,6 @@ function initAnalyticsTracking() {
   });
 }
 
+initAboutLoadMore();
 initImageLightbox();
 initAnalyticsTracking();
