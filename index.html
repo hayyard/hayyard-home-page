@@ -42,6 +42,7 @@
             >💬 立即短信</a
           >
         </div>
+        <a href="tel:+14085560556" class="mobile-call-button">📞电话</a>
         <ul class="nav-links">
           <li><a href="#home">首页</a></li>
           <li><a href="#about">关于</a></li>
@@ -80,8 +81,8 @@
         <p class="hero-subtitle">✓ 根据预算提供方案</p>
         <p class="hero-subtitle">✓ 清理 · 基层处理 · 铺设</p>
         <div class="hero-actions">
-          <a href="tel:+14085560556" class="cta-button">📞 立即咨询</a>
-          <a href="#contact" class="cta-button secondary">免费估价</a>
+          <a href="tel:+14085560556" class="cta-button">📞 电话咨询</a>
+          <a href="#contact" class="cta-button secondary">📝 免费估价</a>
         </div>
         <p class="hero-note">发几张院子照片，先帮您看看</p>
       </div>
@@ -93,15 +94,34 @@
         <h2>工程案例</h2>
         <div class="about-content">
           <div class="about-image-card">
-            <h3>施工前</h3>
+            <h3>真草施工前</h3>
             <img
               src="img/projects/before8.jpg"
               alt="施工前草坪和景观改造效果"
             />
           </div>
           <div class="about-image-card">
-            <h3>施工后</h3>
+            <h3>真草施工后</h3>
             <img src="img/projects/after8.jpg" alt="施工后草坪和景观改造效果" />
+          </div>
+          <div class="about-image-card">
+            <h3>假草施工前</h3>
+            <img
+              src="img/projects/before6.jpg"
+              alt="施工前草坪和景观改造效果"
+            />
+          </div>
+          <div class="about-image-card">
+            <h3>假草施工后</h3>
+            <img src="img/projects/after6.jpg" alt="施工后草坪和景观改造效果" />
+          </div>
+          <div class="about-image-card">
+            <h3>景观改造前</h3>
+            <img src="img/projects/before9.jpg" alt="施工前景观改造效果" />
+          </div>
+          <div class="about-image-card">
+            <h3>景观改造后</h3>
+            <img src="img/projects/after9.jpg" alt="施工后景观改造效果" />
           </div>
           <div class="about-image-card">
             <h3>施工前</h3>
@@ -113,17 +133,6 @@
           <div class="about-image-card">
             <h3>施工后</h3>
             <img src="img/projects/after7.jpg" alt="施工后草坪和景观改造效果" />
-          </div>
-          <div class="about-image-card">
-            <h3>施工前</h3>
-            <img
-              src="img/projects/before6.jpg"
-              alt="施工前草坪和景观改造效果"
-            />
-          </div>
-          <div class="about-image-card">
-            <h3>施工后</h3>
-            <img src="img/projects/after6.jpg" alt="施工后草坪和景观改造效果" />
           </div>
           <div class="about-image-card">
             <h3>施工前</h3>
@@ -186,6 +195,14 @@
               alt="清理后庭院和草坪养护工作效果"
             />
           </div>
+          <div class="about-image-card">
+            <h3>施工前</h3>
+            <img src="img/projects/before10.jpg" alt="施工前庭院景观改造效果" />
+          </div>
+          <div class="about-image-card">
+            <h3>施工后</h3>
+            <img src="img/projects/after10.jpg" alt="施工后庭院景观改造效果" />
+          </div>
         </div>
         <div class="about-actions">
           <button
@@ -244,19 +261,10 @@
       </div>
     </section>
 
-    <!-- Customer Reviews Section -->
-    <section class="reviews" id="reviews">
-      <div class="container">
-        <h2>客户评价</h2>
-        <p class="reviews-stars">⭐⭐⭐⭐⭐</p>
-        <h3 class="reviews-coming-soon">敬请期待</h3>
-      </div>
-    </section>
-
     <!-- FAQ Section -->
     <section class="faq" id="faq">
       <div class="container">
-        <h2>常见问题 ⭐⭐⭐⭐</h2>
+        <h2>常见问题</h2>
         <div class="faq-list">
           <div class="faq-item">
             <h3>您提供免费上门估价吗？</h3>
@@ -300,19 +308,23 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2>想让院子焕然一新？</h2>
-        <p class="contact-lead">电话或短信联系：</p>
-        <h3 class="contact-phone-heading">
-          📞 <a href="tel:+14085560556">(408) 556-0556</a>
-        </h3>
+        <h2 class="contact-title">想让院子焕然一新？</h2>
+
         <div class="contact-form">
           <h2 style="text-align: center; margin-bottom: 0.5rem">
-            预约免费上门估价
+            获取免费估价
           </h2>
-          <p style="text-align: center; margin-bottom: 2rem">
-            <strong
-              >告诉我们您的需求，我们会根据现场情况为您提供合适的施工方案和报价。免费估价，无任何义务。</strong
-            >
+          <p
+            style="
+              text-align: center;
+              margin-bottom: 2rem;
+              max-width: 430px;
+              margin-left: auto;
+              margin-right: auto;
+              line-height: 1.5;
+            "
+          >
+            <strong>只需简单填写基本信息，<br />我们通常会在一天内回复</strong>
           </p>
           <form onsubmit="handleSubmit(event)">
             <div class="form-group">
@@ -427,9 +439,17 @@
               </div>
             </div>
             <button type="submit" class="submit-btn">[ 获取免费报价 ]</button>
-            <p class="response-note">我们通常会在 24 小时内回复。</p>
           </form>
         </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <h2>客户评价</h2>
+        <p class="reviews-stars">⭐⭐⭐⭐⭐</p>
+        <h3 class="reviews-coming-soon">敬请期待</h3>
       </div>
     </section>
 
