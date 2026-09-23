@@ -121,6 +121,10 @@ nav .container {
   color: #a8d5a8;
 }
 
+.mobile-call-button {
+  display: none;
+}
+
 /* Container */
 .container {
   max-width: 1200px;
