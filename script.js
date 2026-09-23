@@ -30,14 +30,14 @@ function handleSubmit(event) {
     body: JSON.stringify(data),
   })
     .then(() => {
-      alert("Thank you for your interest! We will contact you shortly.");
+      alert("感谢您的关注！我们会尽快与您联系。");
       form.reset();
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
     })
     .catch((error) => {
-      console.error("Error:", error);
-      alert("Thank you for your interest! We will contact you shortly.");
+      console.error("错误:", error);
+      alert("感谢您的关注！我们会尽快与您联系。");
       form.reset();
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
@@ -122,7 +122,7 @@ function initAboutLoadMore() {
   );
   const cardsPerPair = 2;
   const initialVisiblePairs = 3;
-  const expandPairsPerClick = 3;
+  const expandPairsPerClick = 999;
 
   if (!loadMoreButton || !viewLessButton || !cards.length) {
     return;
@@ -141,8 +141,10 @@ function initAboutLoadMore() {
     const hasMore = visiblePairs < totalPairs;
     const isExpanded = visiblePairs > initialVisiblePairs;
     loadMoreButton.hidden = !hasMore;
+    loadMoreButton.style.display = hasMore ? "inline-block" : "none";
     loadMoreButton.setAttribute("aria-hidden", String(!hasMore));
     viewLessButton.hidden = !isExpanded;
+    viewLessButton.style.display = isExpanded ? "inline-block" : "none";
     viewLessButton.setAttribute("aria-hidden", String(!isExpanded));
   }
 
@@ -158,6 +160,23 @@ function initAboutLoadMore() {
   });
 
   render();
+}
+
+function initPhotoUploadLabel() {
+  const photoInput = document.getElementById("photo");
+  const photoFileName = document.getElementById("photo-file-name");
+
+  if (!photoInput || !photoFileName) {
+    return;
+  }
+
+  photoInput.addEventListener("change", () => {
+    const fileName =
+      photoInput.files && photoInput.files.length
+        ? photoInput.files[0].name
+        : "未选择文件";
+    photoFileName.textContent = fileName;
+  });
 }
 
 function initAnalyticsTracking() {
@@ -179,4 +198,5 @@ function initAnalyticsTracking() {
 
 initAboutLoadMore();
 initImageLightbox();
+initPhotoUploadLabel();
 initAnalyticsTracking();
