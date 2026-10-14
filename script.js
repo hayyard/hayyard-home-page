@@ -122,7 +122,6 @@ function initAboutLoadMore() {
   );
   const cardsPerPair = 2;
   const initialVisiblePairs = 3;
-  const expandPairsPerClick = 999;
 
   if (!loadMoreButton || !viewLessButton || !cards.length) {
     return;
@@ -149,7 +148,7 @@ function initAboutLoadMore() {
   }
 
   loadMoreButton.addEventListener("click", () => {
-    visiblePairs = Math.min(visiblePairs + expandPairsPerClick, totalPairs);
+    visiblePairs = totalPairs;
     render();
   });
 
